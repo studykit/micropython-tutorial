@@ -16,9 +16,9 @@ def setup():
         return
 
     ntptime.host = 'time.google.com'
-    ntptime.settime()  # ntptime으로 RTC를 UTC 시간으로 설정
+    ntptime.settime()  # Set the RTC to UTC time using ntptime
 
-    # 현재 UTC 시간을 초 단위로 가져와서, 9시간(9*3600초)을 더한 후 한국 시간으로 변환합니다.
+    # Get the current UTC time in seconds, add 9 hours (9*3600 seconds), and convert it to Korean time.
     utc_seconds = time.mktime(time.localtime())
     kst_seconds = utc_seconds + (9 * 3600)
     t = time.localtime(kst_seconds)

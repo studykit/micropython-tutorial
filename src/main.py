@@ -12,7 +12,7 @@ while True:
     display.set_textpos(0, 0)
 
     if tick:
-        # 센서에서 온도와 습도 읽기
+        # Read temperature and humidity from the sensor
         temperature, humidity = sensor.read()
         display.print(f"{am_pm} {h:02d}:{m:02d}\n")
         display.print(f"온도   {temperature}°\n")
@@ -22,8 +22,8 @@ while True:
 
     tick = not tick
 
-    # 디스플레이 업데이트
+    # Update the display
     display.show()
 
-    # 1초 대기
+    # Wait for 1 second
     time.sleep(1)

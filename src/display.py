@@ -3,7 +3,7 @@ from writer import Writer
 import korean_16 as fonts
 from ssd1306 import SSD1306_I2C as SSD1306
 
-# OLED 디스플레이 설정 (I2C)
+# OLED display configuration (I2C)
 _i2c = I2C(scl=Pin(12), sda=Pin(14))
 _display = SSD1306(128, 64, _i2c)
 _display.fill(0)

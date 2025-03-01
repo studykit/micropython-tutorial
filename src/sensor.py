@@ -1,8 +1,8 @@
 from machine import Pin
 import dht
 
-# DHT11 센서 설정
-_sensor = dht.DHT11(Pin(16))  # D0 핀은 GPIO16에 해당
+# DHT11 sensor configuration
+_sensor = dht.DHT11(Pin(16))  # D0 pin corresponds to GPIO16
 
 def read():
     _sensor.measure()
