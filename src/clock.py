@@ -5,6 +5,9 @@ from machine import RTC
 clock_initialized = False
 clock = RTC()
 
+_pm = const("오후") # type: ignore
+_am = const("오전") # type: ignore
+
 def setup():
     global clock_initialized
     global clock
@@ -25,4 +28,8 @@ def setup():
 
 def now():
     _, _, _, _, h, m, s, _ = clock.datetime()
-    return h, m
+    if h > 12:
+        h -= 12
+        return h, m, _pm
+    else:
+        return h, m, _am
